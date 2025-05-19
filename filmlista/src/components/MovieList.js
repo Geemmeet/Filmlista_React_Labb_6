@@ -14,9 +14,6 @@ export default function MovieList() {
     return (
         <ul>
             {movies.map((movie) => (
-                const stars = (for (let i = 0; i < movie.rating; i++) {
-                    stars = stars + `<img src="./images/star.png" alt="star">`;
-                })
                 <li>{movie.title} {movie.stars}</li>
                 ))}
         </ul>

@@ -1,6 +1,6 @@
-export default function Select ({id, options, labelText}) {
+export default function Select ({name, id, options, labelText}) {
     let listedOptions = (
-        <select id={id} className="form-control">
+        <select name={name} id={id} className="form-control">
         {
         options.map((option, index) => (
             <option value={option} key={index}>{option}</option>
