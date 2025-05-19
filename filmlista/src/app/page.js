@@ -1,3 +1,7 @@
+"use client";
+
+import { useState } from 'react';
+
 import Select from '@/components/Select/index'
 import InputField from '@/components/InputField';
 import Button from '@/components/Button';
@@ -5,6 +9,11 @@ import Button from '@/components/Button';
 import 'bootstrap/dist/css/bootstrap.css';
 
 export default function Home() {
+  //actions before return
+  const [movies, setMovies] = useState([]);
+  const [searchResult, setSearchResult] = useState([]);
+  const [searchTerm, setSearchTerm] = useState("");
+
   return (
     <div className="container">
       <h1 className="text-center mt-5">Min filmlista</h1>
