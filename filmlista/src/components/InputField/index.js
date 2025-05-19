@@ -9,12 +9,9 @@ export default function InputField ({id, labelText, placeholderText, onChange}) 
                 id = {id}
                 name = {id}
                 placeholder={placeholderText}
-                onChange={onChange}
                 className="form-control mt-3"
             />
         </>
 
     );
 }
-
-//onChange is the eventhandler

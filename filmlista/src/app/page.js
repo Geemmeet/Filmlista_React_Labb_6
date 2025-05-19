@@ -5,19 +5,24 @@ import { useState } from 'react';
 import Select from '@/components/Select/index'
 import InputField from '@/components/InputField';
 import Button from '@/components/Button';
+import MovieList from '@/components/MovieList';
 
 import 'bootstrap/dist/css/bootstrap.css';
 
 export default function Home() {
   //actions before return
-  const [movies, setMovies] = useState([]);
-  const [searchResult, setSearchResult] = useState([]);
-  const [searchTerm, setSearchTerm] = useState("");
+  const [title, setTitle] = useState('');
+  const [rating, setRating] = useState('');
+
+  function addMovie(event) {
+    event.preventDefault;
+    console.log(event.target);
+  }
 
   return (
     <div className="container">
       <h1 className="text-center mt-5">Min filmlista</h1>
-      <form>
+      <form action={addMovie}>
         <fieldset>
           <legend>Lägg till en film</legend>
           <hr />
@@ -25,7 +30,6 @@ export default function Home() {
             id = {'title-field'}
             labelText={'Titel: '}
             placeholderText={'Titel här...'}
-            onChange ={''}
           />
           <Select
             id={'rating'}
@@ -34,19 +38,16 @@ export default function Home() {
             labelText={'Betyg:'}
           />
         </fieldset>
-        <Button
-          onClick={''} 
-          styleClass={'btn btn-success mt-3'} 
-          text={'Spara'}
-        />
+        <button type="submit" className='btn btn-success mt-3'>Spara</button>
       </form>
+      <MovieList />
       <Button 
-        onClick={''} 
+        onClick={addMovie} 
         styleClass={'btn btn-primary mt-5 me-2'} 
         text={'Alfabetisk ordning'}
       />
       <Button 
-        onClick={''} 
+        onClick={addMovie} 
         styleClass={'btn btn-primary mt-5'} 
         text={'Betygsordning'}
       />
