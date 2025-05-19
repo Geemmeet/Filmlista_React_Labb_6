@@ -11,7 +11,7 @@ export default function Select ({id, options, labelText}) {
 
     return (
         <>
-            <label htmlFor={id} className="h3">{labelText} </label>
+            <label htmlFor={id} className="h3 mt-4">{labelText} </label>
             {listedOptions}
         </>
         
