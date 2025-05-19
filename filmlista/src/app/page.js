@@ -6,25 +6,41 @@ import Form from '@/components/Form/Form'
 
 import 'bootstrap/dist/css/bootstrap.css';
 
-
-
+import { useState } from 'react';
 
 export default function Home() {
   //actions before return
+  const [movies, setMovies] = useState([]);
+
+  function addMovie(title, rating) {
+    const newMovie = { title: title, rating: rating };
+    setMovies(prevMovies => [...prevMovies, newMovie]);
+  };
+
+  function sortAlfa (movies) {
+    movies.title.sort();
+
+
+  };
+
+  function sortRating (movies) {
+
+
+  };
   
 
   return (
     <div className="container">
       <h1 className="text-center mt-5">Min filmlista</h1>
-      <Form />
-      <MovieList />
+      <Form addMovie={addMovie} />
+      <MovieList movies={movies}/>
       <Button 
-        onClick={HandleSubmit} 
+        onClick={sortAlfa} 
         styleClass={'btn btn-primary mt-5 me-2'} 
         text={'Alfabetisk ordning'}
       />
       <Button 
-        onClick={HandleSubmit} 
+        onClick={addMovie} 
         styleClass={'btn btn-primary mt-5'} 
         text={'Betygsordning'}
       />

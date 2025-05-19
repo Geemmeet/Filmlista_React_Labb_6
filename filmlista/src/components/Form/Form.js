@@ -1,9 +1,7 @@
 import Select from '@/components/Form/Select'
 import InputField from '@/components/Form/InputField';
 
-import { useState } from 'react';
-
-export default function Form() {
+export default function Form({addMovie}) {
     function HandleSubmit (e) {
         e.preventDefault();
         const formData = new FormData(e.currentTarget);
@@ -15,7 +13,8 @@ export default function Form() {
         alert("Titel får inte lämnas tom")
 
         } else {
-          addMovies(title, rating);                      
+          addMovie(title, rating);
+          e.target.reset();  
         }
     }
 
