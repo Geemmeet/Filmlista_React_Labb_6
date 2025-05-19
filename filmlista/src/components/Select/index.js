@@ -1,4 +1,4 @@
-export default function Datalist ({id, options, labelText}) {
+export default function Select ({id, options, labelText}) {
     let listedOptions = (
         <select id={id} className="form-control">
         {
@@ -11,7 +11,7 @@ export default function Datalist ({id, options, labelText}) {
 
     return (
         <>
-            <label htmlFor={id}>{labelText} </label>
+            <label htmlFor={id} className="h3">{labelText} </label>
             {listedOptions}
         </>
         
