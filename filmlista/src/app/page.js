@@ -25,16 +25,17 @@ export default function Home() {
     setMovies(movies.filter((movie) => movie.id !== id));
   }
 
-  function sortAlfa (movies) {
-    movies.title.sort();
+  //[...variable] Spread Operator in React to quickly copy all or part of an existing array or object into another array or object.
+  function sort (type) {
+    if (type === "rating") {
+      const moviesSorted = [...movies].sort((a, b) => a.rating.localeCompare(b.rating));
+      setMovies(moviesSorted)
+
+    } else {
+      const moviesSorted = [...movies].sort((a, b) => a.title.localeCompare(b.title));
+      setMovies(moviesSorted)
+    }
   };
-
-
-  function sortRating (movies) {
-
-
-  };
-  
 
   return (
     <div className="container">
@@ -42,16 +43,15 @@ export default function Home() {
       <Form handleAdd={handleAdd} />
       <MovieList movies={movies} handleDelete={handleDelete}/>
       <Button 
-        onClick={sortAlfa} 
+        onClick={() => sort("alfa")} 
         styleClass={'btn btn-primary mt-5 me-2'} 
         text={'Alfabetisk ordning'}
       />
       <Button 
-        onClick={handleAdd} 
+        onClick={() => sort("rating")} 
         styleClass={'btn btn-primary mt-5'} 
         text={'Betygsordning'}
       />
-
     </div>
   );
 }
