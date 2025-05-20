@@ -1,7 +1,7 @@
 import Select from '@/components/Form/Select'
 import InputField from '@/components/Form/InputField';
 
-export default function Form({addMovie}) {
+export default function Form({handleAdd}) {
     function HandleSubmit (e) {
         e.preventDefault();
         const formData = new FormData(e.currentTarget);
@@ -16,8 +16,7 @@ export default function Form({addMovie}) {
           const id = function() {
           console.log("Welcome to ", str);
         };
-
-          addMovie(id, title, rating);
+          handleAdd(title, rating);
           e.target.reset();  
         }
     }
@@ -40,7 +39,7 @@ export default function Form({addMovie}) {
             labelText={'Betyg:'}
           />
         </fieldset>
-        <button type="submit" className='btn btn-success mt-3'>Spara</button>
+        <button type="submit" className='btn btn-success mt-3 mb-4'>Spara</button>
       </form>
       )
 }

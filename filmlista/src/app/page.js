@@ -8,23 +8,27 @@ import 'bootstrap/dist/css/bootstrap.css';
 
 import { useState } from 'react';
 
+//uuid används för att generera ett unikt id
 import {v4 as uuidv4} from 'uuid';
 
 export default function Home() {
   //actions before return
   const [movies, setMovies] = useState([]);
 
-  function addMovie(title, rating) {
+  function handleAdd(title, rating) {
     const id = uuidv4();
     const newMovie = {id, title, rating};
     setMovies(prevMovies => [...prevMovies, newMovie]);
   };
 
+  function handleDelete(id) {
+    setMovies(movies.filter((movie) => movie.id !== id));
+  }
+
   function sortAlfa (movies) {
     movies.title.sort();
-
-
   };
+
 
   function sortRating (movies) {
 
@@ -35,8 +39,8 @@ export default function Home() {
   return (
     <div className="container">
       <h1 className="text-center mt-5">Min filmlista</h1>
-      <Form addMovie={addMovie} />
-      <MovieList movies={movies}/>
+      <Form addMovie={handleAdd} />
+      <MovieList movies={movies} deleteMovie={handleDelete}/>
       <Button 
         onClick={sortAlfa} 
         styleClass={'btn btn-primary mt-5 me-2'} 
