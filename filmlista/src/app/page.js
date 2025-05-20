@@ -39,15 +39,15 @@ export default function Home() {
   return (
     <div className="container">
       <h1 className="text-center mt-5">Min filmlista</h1>
-      <Form addMovie={handleAdd} />
-      <MovieList movies={movies} deleteMovie={handleDelete}/>
+      <Form handleAdd={handleAdd} />
+      <MovieList movies={movies} handleDelete={handleDelete}/>
       <Button 
         onClick={sortAlfa} 
         styleClass={'btn btn-primary mt-5 me-2'} 
         text={'Alfabetisk ordning'}
       />
       <Button 
-        onClick={addMovie} 
+        onClick={handleAdd} 
         styleClass={'btn btn-primary mt-5'} 
         text={'Betygsordning'}
       />

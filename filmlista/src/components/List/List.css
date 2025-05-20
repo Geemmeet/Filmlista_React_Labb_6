@@ -1,5 +1,6 @@
-img {
+#delete {
     height: 40px;
+    cursor: pointer;
 }
 
 #star {

@@ -18,6 +18,7 @@ export default function Movie (props) {
                 <img 
                 src = "/Images/delete.png"
                 className="ms-2"
+                id="delete"
                 alt = "delete button"
                 onClick ={() => {handleDelete(movie.id)}}
                 />
@@ -45,7 +46,8 @@ function createStars (rating) {
                 src = "/Images/star.png"
                 className="ms-2"
                 id="star"
-                alt = "star"/>
+                alt = "star"
+                key={i}/>
             )
     } 
 

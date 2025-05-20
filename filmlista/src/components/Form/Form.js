@@ -7,15 +7,11 @@ export default function Form({handleAdd}) {
         const formData = new FormData(e.currentTarget);
         const title = formData.get('title-field');
         const rating = formData.get('rating-field');
-        console.log(title, rating);
 
         if (!title || title.trim() === "") {
         alert("Titel får inte lämnas tom")
 
         } else {
-          const id = function() {
-          console.log("Welcome to ", str);
-        };
           handleAdd(title, rating);
           e.target.reset();  
         }
