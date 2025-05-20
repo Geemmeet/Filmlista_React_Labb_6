@@ -1,19 +1,22 @@
 "use client";
 
 import Button from '@/components/Button';
-import MovieList from '@/components/MovieList';
+import MovieList from '@/components/List/MovieList';
 import Form from '@/components/Form/Form'
 
 import 'bootstrap/dist/css/bootstrap.css';
 
 import { useState } from 'react';
 
+import {v4 as uuidv4} from 'uuid';
+
 export default function Home() {
   //actions before return
   const [movies, setMovies] = useState([]);
 
   function addMovie(title, rating) {
-    const newMovie = { title: title, rating: rating };
+    const id = uuidv4();
+    const newMovie = {id, title, rating};
     setMovies(prevMovies => [...prevMovies, newMovie]);
   };
 

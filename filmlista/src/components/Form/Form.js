@@ -13,7 +13,11 @@ export default function Form({addMovie}) {
         alert("Titel får inte lämnas tom")
 
         } else {
-          addMovie(title, rating);
+          const id = function() {
+          console.log("Welcome to ", str);
+        };
+
+          addMovie(id, title, rating);
           e.target.reset();  
         }
     }
@@ -39,4 +43,10 @@ export default function Form({addMovie}) {
         <button type="submit" className='btn btn-success mt-3'>Spara</button>
       </form>
       )
+}
+
+
+function generateId() {
+
+
 }
