@@ -23,8 +23,8 @@ npm run dev
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
 Dependencies:
-- [Next.js] (https://nextjs.org/)
-- [React] and [React-dom] (https://react.dev/)
-- [Uuid] (https://github.com/uuidjs/uuid)
-- [Bootstrap] (https://getbootstrap.com/)
+- [Next.js](https://nextjs.org/)
+- [React](https://react.dev/)
+- [Uuid](https://github.com/uuidjs/uuid)
+- [Bootstrap](https://getbootstrap.com/)
 - [React-bootstrap] (https://react-bootstrap.netlify.app/)
