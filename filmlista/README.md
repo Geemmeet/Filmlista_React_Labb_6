@@ -27,4 +27,4 @@ Dependencies:
 - [React](https://react.dev/)
 - [Uuid](https://github.com/uuidjs/uuid)
 - [Bootstrap](https://getbootstrap.com/)
-- [React-bootstrap] (https://react-bootstrap.netlify.app/)
+- [React-bootstrap](https://react-bootstrap.netlify.app/)
