@@ -2,6 +2,11 @@ This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-
 
 ## Getting Started
 
+Go to the correct map
+```bash
+cd filmlista
+```
+
 Install dependencies
 ```bash
 npm install
